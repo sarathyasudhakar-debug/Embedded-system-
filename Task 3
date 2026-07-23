@@ -1,0 +1,79 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+#include<string.h>
+#include<ctype.h>
+int main(){/* 
+char office[4]="tcs";
+//printf("%c\n" office[1]);
+// strlen
+printf("%d \n",strlen(office));
+// strcpy
+char college[15]= "sona college";
+printf("before copy:%s \n" ,college );
+strcpy( college ,office);
+printf("after copy: %s \n", college);
+// strcat
+char str1[13]="code";
+char str2[13]="BLOCK";
+printf(" %s \n ",strcat(str1,str2));
+//strcmp
+if(strcmp(str1,str2)==0)
+{
+    printf("%s \n equal");
+}
+    else{
+        printf("%s \n not equal");
+    }
+    // toupper
+    for(int i=0;str1[i]!=0;i++)
+    {
+     str1[i]=toupper(str1[i]);
+    }
+    printf("\n%s\n",str1);
+    // tolower
+     for(int i=0;str2[i]!=0;i++)
+    {
+     str2[i]=tolower(str2[i]);
+    }
+    printf("%s\n",str2);
+    // MULTIPLICATION
+    int num,i;
+    printf(" enter the number:",  num);
+    scanf("%d",&num);
+    printf(" multiplication table of: %d \n",num);
+    for(i=1;i<=10;i++)
+    {
+        printf("%d * %d= %d\n",num,i,num*i);
+        
+    }*/
+    // break
+    int i;
+    for(i=1;i<50;i++)
+    {
+    if(i==25)
+    break;
+    printf("%d \n",i);
+    }
+    //continue
+    int j;
+    for(j=1;j<20;j++)
+    {
+    if(j%3==0)
+    continue;
+    printf("%d \n",j);
+}
+    // user to enter num
+    int k;
+    printf("%d\nenter the number:",k);
+    scanf("%d",k);
+    if(k<0)
+    {
+        printf(" num is positive");}
+        else{
+        printf("invalid");
+    }
+    
+    
+
+    return 0;
+}
