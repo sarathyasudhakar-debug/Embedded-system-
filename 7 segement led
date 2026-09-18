@@ -1,0 +1,41 @@
+
+
+#include <xc.h>
+
+// Configuration bits
+#pragma config FOSC = HS        // HS oscillator
+#pragma config WDTE = OFF       // Watchdog Timer disabled
+#pragma config PWRTE = OFF      // Power-up Timer disabled
+#pragma config BOREN = ON       // Brown-out Reset enabled
+#pragma config LVP = OFF        // Low voltage programming disabled
+#pragma config CPD = OFF        // Data EEPROM code protection off
+#pragma config WRT = OFF        // Flash write protection off
+#pragma config CP = OFF         // Flash code protection off
+
+#define _XTAL_FREQ 20000000     // 20 MHz crystal
+
+void main(void) {
+    TRISD = 0x00;   // PORTD as output (to 7-seg display)
+    PORTD = 0x00;
+
+    // Common-cathode 7-seg codes: bit order DP-g-f-e-d-c-b-a
+    unsigned char segCode[10] = {
+        0x3F, // 0 (unused, kept for reference)
+        0x06, // 1
+        0x5B, // 2
+        0x4F, // 3
+        0x66, // 4
+        0x6D, // 5
+        0x7D, // 6
+        0x07, // 7
+        0x7F, // 8
+        0x6F  // 9
+    };
+
+    while (1) {
+        for (unsigned char i = 1; i < 10; i++) {
+            PORTD = segCode[i];
+            __delay_ms(1000);
+        }
+    }
+}
